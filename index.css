@@ -1,0 +1,28 @@
+body, html {
+    font-size: 10px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+       background-color:  #985e33;
+}
+
+.card {
+    width: 22%;
+    height: 500px;
+    background-color: white;
+    margin: 20px 0;
+    border: 10px solid black;
+border-radius: 8%
+}
+
+.container {
+    width: 99vw;
+    margin: 25px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 50px;
+}
