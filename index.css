@@ -1,28 +1,74 @@
-body, html {
-    font-size: 10px;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-       background-color:  #985e33;
+body,
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #985e33;
+  font-family: "Playfair Display", system-ui, sans-serif;
+  font-weight: 100; /* use 100–900 */
 }
 
 .card {
-    width: 22%;
-    height: 500px;
-    background-color: white;
-    margin: 20px 0;
-    border: 10px solid black;
-border-radius: 8%
+  width: 22%;
+  height: 500px;
+  background-color: white;
+  margin: 20px 0;
+  border: 10px solid black;
+  border-radius: 8%;
+  place-items: center;
 }
 
 .container {
-    width: 99vw;
-    margin: 25px auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  width: 99vw;
+  margin: 25px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 img {
-    width: 50px;
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10%;
+  display: flex;
+  margin: 40px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+.panda {
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 100px;
+  text-align: center;
+}
+
+.sub {
+  text-align: center;
+  font-size: 30px;
+  margin: 50px;
+}
+
+button {
+  background-color: #985e33;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-left: 20px;
+  font-size: 15px;
+  transition: transform 0.2s
+  
+}
+
+button:hover {
+  border-radius: 4px;
+  transform: scale(0.94);
 }
