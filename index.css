@@ -11,12 +11,15 @@ html {
 
 .card {
   width: 22%;
-  height: 500px;
+  height: 600px;
   background-color: white;
   margin: 20px 0;
   border: 10px solid black;
   border-radius: 8%;
-  place-items: center;
+  display: flex;
+flex-direction: column;
+align-items: center;
+
 }
 
 .container {
@@ -28,21 +31,23 @@ html {
 }
 
 img {
-  width: 400px;
-  height: 300px;
+  width: 463px;
+  height: 303px;
   object-fit: cover;
   object-position: center;
-  border-radius: 10%;
-  display: flex;
-  margin: 40px;
+  border-radius: 6%;
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 45px;
+  margin-bottom: 0;
+  padding-bottom: 2px;
 }
 
 .panda {
-  font-size: 20px;
+  font-size: 30px;
+    margin-bottom: 0;
+  padding-bottom: 40px;
 }
 
 h1 {
@@ -54,6 +59,7 @@ h1 {
   text-align: center;
   font-size: 30px;
   margin: 50px;
+  border: 6px solid black;
 }
 
 button {
@@ -62,13 +68,37 @@ button {
   color: white;
   font-weight: bold;
   border-radius: 5px;
-  margin-left: 20px;
   font-size: 15px;
-  transition: transform 0.2s
-  
+  transition: transform 0.2s;
 }
 
 button:hover {
   border-radius: 4px;
-  transform: scale(0.94);
+  transform: scale(0.90);
 }
+
+header {
+  border: 10px solid black;
+  animation: rotate-bg-color 10s infinite;
+}
+
+@keyframes rotate-bg-color {
+  0% {
+    background-color: #985e33;
+  }
+    20% {
+    background-color: #8B4513;
+  }
+    40% {
+    background-color: #A0522D;
+  }
+    60% {
+    background-color: #D2691E;
+  }
+    80% {
+    background-color: #CD853F;
+  }
+    100% {
+    background-color: #5E2C04;
+  }
+  }
