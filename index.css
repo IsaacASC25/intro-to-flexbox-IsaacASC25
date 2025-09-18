@@ -37,6 +37,7 @@ img {
   object-fit: cover;
   object-position: center;
   border-radius: 6%;
+  padding-bottom: 30px;
 }
 
 a {
