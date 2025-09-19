@@ -7,7 +7,13 @@ html {
   background-color: #985e33;
   font-family: "Playfair Display", system-ui, sans-serif;
   font-weight: 100; /* use 100–900 */
-    animation: rotate-bg-color 10s infinite;
+}
+
+ #Panda1, #Panda3, #Panda6, #Panda8 {
+  animation: slide-down 1.5s;
+}
+#Panda2, #Panda4, #Panda5, #Panda7 {
+  animation: slide-up 1.5s;
 }
 
 .card {
@@ -38,6 +44,51 @@ img {
   object-position: center;
   border-radius: 6%;
   padding-bottom: 30px;
+  animation: slide-in 3s infinite;
+}
+
+
+@keyframes slide-down {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+@keyframes slide-right {
+  0%{
+    transform: translateX(-100%);
+  }
+    100% {
+      transform: translateX(0);
+    }
+  }
+@keyframes slide-left {
+  0%{
+    transform: translateX(100%);
+  }
+    100% {
+      transform: translateX(0);
+    }
+  }
+@keyframes slide-up {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: black; }
 }
 
 a {
@@ -57,6 +108,11 @@ a {
 h1 {
   font-size: 100px;
   text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: 
+    typing 5s steps(100, end) forwards,
+    blink-caret 0.75s step-end infinite;
 }
 
 .sub {
