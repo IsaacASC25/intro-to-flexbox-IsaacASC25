@@ -88,7 +88,6 @@ img {
 
 @keyframes blink-caret {
   0%, 100% { border-color: transparent; }
-  50% { border-color: black; }
 }
 
 a {
@@ -107,11 +106,11 @@ a {
 
 h1 {
   font-size: 100px;
-  text-align: center;
   overflow: hidden;
   white-space: nowrap;
+   border-left: 7.2em solid black; 
   animation: 
-    typing 5s steps(100, end) forwards,
+    typing 5s steps(100, end), 
     blink-caret 0.75s step-end infinite;
 }
 
