@@ -38,13 +38,12 @@ align-items: center;
 }
 
 img {
-  width: 463px;
+  width: 100%;
   height: 303px;
   object-fit: cover;
   object-position: center;
   border-radius: 6%;
   padding-bottom: 30px;
-  animation: slide-in 3s infinite;
 }
 
 
@@ -81,6 +80,7 @@ img {
       }
     }
 
+<<<<<<< HEAD
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
@@ -89,6 +89,8 @@ img {
 @keyframes blink-caret {
   0%, 100% { border-color: transparent; }
 }
+=======
+>>>>>>> b3aa4ea980530321a52d81541810c5347cf08079
 
 a {
   font-size: 45px;
@@ -96,6 +98,7 @@ a {
   padding-bottom: 2px;
   color: black;
   text-decoration: none;
+  box-shadow: 10px 10px 5px #B5651D;
 }
 
 .panda {
@@ -106,12 +109,16 @@ a {
 
 h1 {
   font-size: 100px;
+<<<<<<< HEAD
   overflow: hidden;
   white-space: nowrap;
    border-left: 7.2em solid black; 
   animation: 
     typing 5s steps(100, end), 
     blink-caret 0.75s step-end infinite;
+=======
+  text-align: center;
+>>>>>>> b3aa4ea980530321a52d81541810c5347cf08079
 }
 
 .sub {
