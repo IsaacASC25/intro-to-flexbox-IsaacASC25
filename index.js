@@ -217,20 +217,30 @@ const DOMSelectors = {
   age: document.getElementById(".age"),
   sibling: document.getElementById(".sibling."),
   img: document.getElementById(".img"),
-  link: document.getElementById(".link"),
 };
 
-function inject(item) {
+function inject(panda) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
     "afterbegin",
-    `
-        <a class="name" src="${panda.name}"</a>
+    ` <div class = "card">
+        <a class="name">${panda.name}"</a>
       <p class="price">${panda.price}</p>
       <h3 class="age">${panda.age}</h3>
       <h3 class="sibling">${panda.sibling}</h3>
-      <img class="img">${panda.img}}</img>
+      <img class="img" src = ${panda.img }" alt = ""</img>
       </div>`
   );
 }
-inject(item[0]);
+panda.forEach((product) = > product(inject[0]))
+
+function addToCart(){
+    const buttons = document.querySelectorAll("button");
+    //create array if you need more than forEach
+    const btnarray = Array.from(buttons)
+    btnarray.forEach ((btn) => btn.addEventListerner("click", function (event){
+      console.log(event.target.textContent);
+      console.log(event.target.closest(".card"));
+    })
+  );
+}
