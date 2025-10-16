@@ -46,7 +46,7 @@ const panda = [
     age: 13,
     price: "$1200",
     link: "https://www.pandaexpress.com/",
-    displayName: "Panda"
+    displayName: "Panda",
   },
   {
     img: "https://th.bing.com/th/id/OIP.-INJNxW1OSx7V_7gmL4IogHaFj?w=229&h=180&c=7&r=0&o=7&cb=12&pid=1.7&rm=3",
@@ -162,8 +162,6 @@ const panda = [
   },
 ];
 
-
-
 const DOMSelectors = {
   name: document.getElementById(".name"),
   price: document.getElementById(".price"),
@@ -186,15 +184,18 @@ function inject(panda) {
       </div>`
   );
 }
-panda.forEach((panda) => inject (panda))
+panda.forEach((panda) => inject(panda));
 
-function addToCart(){
-    const buttons = document.querySelectorAll("button");
-    //create array if you need more than forEach
-    const btnarray = Array.from(buttons)
-    btnarray.forEach ((btn) => btn.addEventListerner("click", function (event){
-      console.log(event.target.textContent);
-      console.log(event.target.closest(".card"));
+function addToCart() {
+  const buttons = document.querySelectorAll("button");
+  const btnarray = Array.from(buttons);
+  const cart = []
+  btnarray.forEach((btn) =>
+    btn.addEventListener("click", function (event) {
+      cart.push(panda.name);
+      console.log (cart)
     })
   );
 }
+
+addToCart();

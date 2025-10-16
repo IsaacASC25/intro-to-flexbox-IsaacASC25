@@ -4,7 +4,6 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #985e33;
   font-family: "Playfair Display", system-ui, sans-serif;
   font-weight: 100; /* use 100–900 */
 }
@@ -168,5 +167,25 @@ p {
       }
       100% {
         transform: translateY(0);
+      }
+    }
+    
+ .background--custom {
+      background: linear-gradient(90deg, #FF8600, #702F00, #CE9658);
+      background-size: 500% 500%;
+      animation: gradient 7s alternate infinite;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 390%;
+      width: 100%;
+      z-index: -2;
+    }
+    @keyframes gradient {
+      0% {
+        background-position: 0%;
+      }
+      100% {
+        background-position: 100%;
       }
     }
