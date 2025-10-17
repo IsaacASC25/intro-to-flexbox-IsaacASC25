@@ -174,7 +174,7 @@ function inject(panda) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
     "afterbegin",
-    ` <div class = "card">
+    ` <div class = "card" data-title = "${panda.name}">
     <img class="img" src = ${panda.img}" alt = ""</img>
         <a class="name">${panda.name}</a>
         <h3 class="sibling">${"Sibling: " + panda.sibling}</h3>
@@ -192,8 +192,13 @@ function addToCart() {
   const cart = []
   btnarray.forEach((btn) =>
     btn.addEventListener("click", function (event) {
-      cart.push(panda.name);
-      console.log (cart)
+      panda.forEach((panda) => {
+      if (
+        panda.name === ((event.target.closest(".card").getAttribute("data-title")))
+      )
+      cart.push(panda);
+    })
+    console.log (cart)
     })
   );
 }
