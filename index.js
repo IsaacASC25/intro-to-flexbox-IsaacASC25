@@ -4,7 +4,7 @@ const panda = [
     name: "Funny Panda",
     sibling: "Gentle Panda",
     age: 7,
-    price: "$1500",
+    price: 1500,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -12,7 +12,7 @@ const panda = [
     name: "Loyal Panda",
     sibling: "Quiet Panda",
     age: 10,
-    price: "$2900",
+    price: 2900,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -20,7 +20,7 @@ const panda = [
     name: "Panda eating Pollen",
     sibling: "Red panda",
     age: 14,
-    price: "$9000",
+    price: 9000,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -28,7 +28,7 @@ const panda = [
     name: "Shy Panda",
     sibling: "Strong Panda",
     age: 1,
-    price: "$950",
+    price: 950,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -36,7 +36,7 @@ const panda = [
     name: "Strong Panda",
     sibling: "Kind Panda",
     age: 12,
-    price: "$2700",
+    price: 2700,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -44,7 +44,7 @@ const panda = [
     name: "Panda",
     sibling: "Curious Panda",
     age: 13,
-    price: "$1200",
+    price: 1200,
     link: "https://www.pandaexpress.com/",
     displayName: "Panda",
   },
@@ -53,7 +53,7 @@ const panda = [
     name: "Jumpy Panda",
     sibling: "Sneaky Panda",
     age: 3,
-    price: "$1300",
+    price: 1300,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -61,7 +61,7 @@ const panda = [
     name: "Sleepy Panda",
     sibling: "Playful Panda",
     age: 8,
-    price: "$1000",
+    price: 1000,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -69,7 +69,7 @@ const panda = [
     name: "Chinese Panda",
     sibling: "Mystery Panda",
     age: 20,
-    price: "$6500",
+    price: 6500,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -77,7 +77,7 @@ const panda = [
     name: "Smart Panda",
     sibling: "Bold Panda",
     age: 11,
-    price: "$2300",
+    price: 2300,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -85,7 +85,7 @@ const panda = [
     name: "Wild Panda",
     sibling: "Friendly Panda",
     age: 6,
-    price: "$2000",
+    price: 2000,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -93,7 +93,7 @@ const panda = [
     name: "Bold Panda",
     sibling: "Funny Panda",
     age: 8,
-    price: "$3200",
+    price: 3200,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -101,7 +101,7 @@ const panda = [
     name: "Sneaky Panda",
     sibling: "Brave Panda",
     age: 2,
-    price: "$1100",
+    price: 1100,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -109,7 +109,7 @@ const panda = [
     name: "Lazy Panda",
     sibling: "Jumpy Panda",
     age: 6,
-    price: "$850",
+    price: 850,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -117,7 +117,7 @@ const panda = [
     name: "Grumpy Panda",
     sibling: "Lazy Panda",
     age: 4,
-    price: "$900",
+    price: 900,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -125,7 +125,7 @@ const panda = [
     name: "Happy Panda",
     sibling: "Grumpy Panda",
     age: 5,
-    price: "$2000",
+    price: 2000,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -133,7 +133,7 @@ const panda = [
     name: "Playful Panda",
     sibling: "Happy Panda",
     age: 7,
-    price: "$1800",
+    price: 1800,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -141,7 +141,7 @@ const panda = [
     name: "Kind Panda",
     sibling: "Smart Panda",
     age: 5,
-    price: "$1800",
+    price: 1800,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -149,7 +149,7 @@ const panda = [
     name: "Brave Panda",
     sibling: "Shy Panda",
     age: 9,
-    price: "$2500",
+    price: 2500,
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -157,7 +157,7 @@ const panda = [
     name: "Friendly Panda",
     sibling: "Loyal Panda",
     age: 3,
-    price: "$1700",
+    price: 1700,
     link: "https://www.pandaexpress.com/",
   },
 ];
@@ -170,6 +170,8 @@ const DOMSelectors = {
   img: document.getElementById(".img"),
 };
 
+
+
 function inject(panda) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
@@ -179,7 +181,7 @@ function inject(panda) {
         <a class="name">${panda.name}</a>
         <h3 class="sibling">${"Sibling: " + panda.sibling}</h3>
         <h3 class="age"> ${"Age: " + panda.age}</h3>
-      <p class="price">${"Price: " + panda.price}</p>
+      <p class="price">${"Price: " + "$"+ panda.price}</p>
       <button> ${"Buy Me Please"}</button>
       </div>`
   );
@@ -189,18 +191,26 @@ panda.forEach((panda) => inject(panda));
 function addToCart() {
   const buttons = document.querySelectorAll("button");
   const btnarray = Array.from(buttons);
-  const cart = []
+  const cart = [];
   btnarray.forEach((btn) =>
     btn.addEventListener("click", function (event) {
       panda.forEach((panda) => {
-      if (
-        panda.name === ((event.target.closest(".card").getAttribute("data-title")))
-      )
-      cart.push(panda);
-    })
-    console.log (cart)
+        if (
+          panda.name ===
+          event.target.closest(".card").getAttribute("data-title")
+        )
+          cart.push(panda);
+      });
+      console.log(cart);
     })
   );
+}
+
+function filterByCost(price) {
+  const display = document.getElementById("card-display");
+  display.innerHTML = "";
+  const filterPandas = pandas.filter((book) => panda.cost === price)
+  console.log (filterByCost)
 }
 
 addToCart();
