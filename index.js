@@ -176,7 +176,7 @@ function inject(panda) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
     "afterbegin",
-    ` <div class = "card" data-title = "${panda.name}">
+    ` <div class = "card" data-title = "${panda.name}" data-price = "${panda.price}">
     <img class="img" src = ${panda.img}" alt = ""</img>
         <a class="name">${panda.name}</a>
         <h3 class="sibling">${"Sibling: " + panda.sibling}</h3>
@@ -206,11 +206,16 @@ function addToCart() {
   );
 }
 
-function filterByCost(price) {
-  const display = document.getElementById("card-display");
-  display.innerHTML = "";
-  const filterPandas = pandas.filter((book) => panda.cost === price)
-  console.log (filterByCost)
-}
-
-addToCart();
+  function filterByPrice(price) {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
+      const cardCategory = card.getAttribute ("data-price")
+      if (price === cardCategory){
+        cards.style.display = "";
+      } else {
+        cards.style.display = "none";
+      }
+    })
+  }
+   filterByPrice(2500);
+  addToCart();
