@@ -176,7 +176,7 @@ function inject(panda) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
     "afterbegin",
-    ` <div class = "card" data-title = "${panda.name}" data-price = "${panda.price}">
+    ` <div class = "card" data-title = "${panda.name}" data-price = ${panda.price}>
     <img class="img" src = ${panda.img}" alt = ""</img>
         <a class="name">${panda.name}</a>
         <h3 class="sibling">${"Sibling: " + panda.sibling}</h3>
@@ -211,11 +211,20 @@ function addToCart() {
     cards.forEach((card) => {
       const cardCategory = card.getAttribute ("data-price")
       if (price === cardCategory){
-        cards.style.display = "";
+        card.style.display = "";
       } else {
-        cards.style.display = "none";
+        card.style.display = "none";
       }
     })
+  }
+
+  function checkCart(panda) {
+    const found = cart.find((cartItem) => cartItem.title === prod.title)
+    if (found) {
+      found.quanitity += 1;
+    } else {
+      
+    }
   }
    filterByPrice(2500);
   addToCart();
