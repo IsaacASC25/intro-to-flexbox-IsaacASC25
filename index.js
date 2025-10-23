@@ -171,7 +171,7 @@ const DOMSelectors = {
 };
 
 
-
+<button> 1500 </button> 
 function inject(panda) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
@@ -206,25 +206,32 @@ function addToCart() {
   );
 }
 
-  function filterByPrice(price) {
-    const cards = document.querySelectorAll(".card");
-    cards.forEach((card) => {
-      const cardCategory = card.getAttribute ("data-price")
-      if (price === cardCategory){
-        card.style.display = "";
-      } else {
-        card.style.display = "none";
-      }
-    })
-  }
-
-  function checkCart(panda) {
-    const found = cart.find((cartItem) => cartItem.title === prod.title)
-    if (found) {
-      found.quanitity += 1;
+function filterByPrice(price) {
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    const cardCategory = card.getAttribute("data-price")
+    if (price === Number(cardCategory)){
+      card.style.display = "";
     } else {
-      
+      card.style.display = 'none';
     }
-  }
-   filterByPrice(2500);
-  addToCart();
+  })
+}
+filterByPrice(2500);
+
+  // const filter = [];
+  // function createCartObject (card) {
+  //   const cartProduct = { ...product, quantity: 1};
+  //   return cartProduct
+  // }
+  // function checkCart(price) {
+  //   const cartProduct = { ...price, quantity: 1};
+  //   const found = filter.find((filterItem) => filterItem.title === cartProduct.price)
+  //   if (found) {
+  //     found.quantity += 1;
+  //   } else {
+  //     filter.push(price)
+  //   }
+  // } 
+
+  // addToCart();
