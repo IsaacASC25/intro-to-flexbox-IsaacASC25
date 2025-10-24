@@ -171,7 +171,7 @@ const DOMSelectors = {
 };
 
 
-<button> 1500 </button> 
+
 function inject(panda) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
@@ -217,8 +217,28 @@ function filterByPrice(price) {
     }
   })
 }
-filterByPrice(2500);
 
+function filterbutton() {
+  const buttons = document.querySelectorAll("button");
+  const btnarray = Array.from(buttons);
+  const cards = document.querySelectorAll(".card");
+  btnarray.forEach((btn) =>
+    btn.addEventListener("click", function (event) {
+      panda.forEach((panda) => {
+        if (
+          panda.price ===
+          event.target.closest(".card").getAttribute("data-price")
+        )
+           cards.forEach((card) => {
+          if (price === Number("data-price")){
+          card.style.display = "";
+    } else {
+      card.style.display = 'none';
+    }
+  })
+})}
+))
+};
   // const filter = [];
   // function createCartObject (card) {
   //   const cartProduct = { ...product, quantity: 1};
