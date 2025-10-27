@@ -5,6 +5,7 @@ const panda = [
     sibling: "Gentle Panda",
     age: 7,
     price: 1500,
+    category: "under",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -13,6 +14,7 @@ const panda = [
     sibling: "Quiet Panda",
     age: 10,
     price: 2900,
+    category: "over",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -21,6 +23,7 @@ const panda = [
     sibling: "Red panda",
     age: 14,
     price: 9000,
+    category: "over",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -29,6 +32,7 @@ const panda = [
     sibling: "Strong Panda",
     age: 1,
     price: 950,
+    category: "under",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -37,6 +41,7 @@ const panda = [
     sibling: "Kind Panda",
     age: 12,
     price: 2700,
+    category: "over",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -45,6 +50,7 @@ const panda = [
     sibling: "Curious Panda",
     age: 13,
     price: 1200,
+    category: "under",
     link: "https://www.pandaexpress.com/",
     displayName: "Panda",
   },
@@ -54,6 +60,7 @@ const panda = [
     sibling: "Sneaky Panda",
     age: 3,
     price: 1300,
+    category: "under",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -62,6 +69,7 @@ const panda = [
     sibling: "Playful Panda",
     age: 8,
     price: 1000,
+    category: "under",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -70,6 +78,7 @@ const panda = [
     sibling: "Mystery Panda",
     age: 20,
     price: 6500,
+    category: "over",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -78,6 +87,7 @@ const panda = [
     sibling: "Bold Panda",
     age: 11,
     price: 2300,
+    category: "over",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -86,6 +96,7 @@ const panda = [
     sibling: "Friendly Panda",
     age: 6,
     price: 2000,
+    category: "same",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -94,6 +105,7 @@ const panda = [
     sibling: "Funny Panda",
     age: 8,
     price: 3200,
+    category: "over",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -102,6 +114,7 @@ const panda = [
     sibling: "Brave Panda",
     age: 2,
     price: 1100,
+    category: "under",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -110,6 +123,7 @@ const panda = [
     sibling: "Jumpy Panda",
     age: 6,
     price: 850,
+    category: "under",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -118,6 +132,7 @@ const panda = [
     sibling: "Lazy Panda",
     age: 4,
     price: 900,
+    category: "under",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -126,6 +141,7 @@ const panda = [
     sibling: "Grumpy Panda",
     age: 5,
     price: 2000,
+    category: "same",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -134,6 +150,7 @@ const panda = [
     sibling: "Happy Panda",
     age: 7,
     price: 1800,
+    category: "under",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -142,6 +159,7 @@ const panda = [
     sibling: "Smart Panda",
     age: 5,
     price: 1800,
+    category: "under",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -150,6 +168,7 @@ const panda = [
     sibling: "Shy Panda",
     age: 9,
     price: 2500,
+    category: "over",
     link: "https://www.pandaexpress.com/",
   },
   {
@@ -158,6 +177,7 @@ const panda = [
     sibling: "Loyal Panda",
     age: 3,
     price: 1700,
+    category: "under",
     link: "https://www.pandaexpress.com/",
   },
 ];
@@ -170,18 +190,18 @@ const DOMSelectors = {
   img: document.getElementById(".img"),
 };
 
-
-
 function inject(panda) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
     "afterbegin",
-    ` <div class = "card" data-title = "${panda.name}" data-price = ${panda.price}>
+    ` <div class = "card" data-title = "${panda.name}" data-price = ${
+      panda.price
+    }>
     <img class="img" src = ${panda.img}" alt = ""</img>
         <a class="name">${panda.name}</a>
         <h3 class="sibling">${"Sibling: " + panda.sibling}</h3>
         <h3 class="age"> ${"Age: " + panda.age}</h3>
-      <p class="price">${"Price: " + "$"+ panda.price}</p>
+      <p class="price">${"Price: " + "$" + panda.price}</p>
       <button> ${"Buy Me Please"}</button>
       </div>`
   );
@@ -209,49 +229,40 @@ function addToCart() {
 function filterByPrice(price) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
-    const cardCategory = card.getAttribute("data-price")
-    if (price === Number(cardCategory)){
+    const cardCategory = card.getAttribute("data-price");
+    if (price === Number(cardCategory)) {
       card.style.display = "";
     } else {
-      card.style.display = 'none';
+      card.style.display = "none";
     }
-  })
+  });
 }
 
-function filterbutton() {
-  const buttons = document.querySelectorAll("button");
-  const btnarray = Array.from(buttons);
-  const cards = document.querySelectorAll(".card");
-  btnarray.forEach((btn) =>
-    btn.addEventListener("click", function (event) {
-      panda.forEach((panda) => {
-        if (
-          panda.price ===
-          event.target.closest(".card").getAttribute("data-price")
-        )
-           cards.forEach((card) => {
-          if (price === Number("data-price")){
-          card.style.display = "";
-    } else {
-      card.style.display = 'none';
-    }
-  })
-})}
-))
-};
-  // const filter = [];
-  // function createCartObject (card) {
-  //   const cartProduct = { ...product, quantity: 1};
-  //   return cartProduct
-  // }
-  // function checkCart(price) {
-  //   const cartProduct = { ...price, quantity: 1};
-  //   const found = filter.find((filterItem) => filterItem.title === cartProduct.price)
-  //   if (found) {
-  //     found.quantity += 1;
-  //   } else {
-  //     filter.push(price)
-  //   }
-  // } 
+function filterButton() {
+  const btn = document.querySelectorAll(".filter-button")
+  btn.addEventListener("click", () => {
+  btn.forEach((card) => {
+    const filter = card.dataset.category
+    filterByPrice (filter)
+  });
+})
+}
 
-  // addToCart();
+
+
+// const filter = [];
+// function createCartObject (card) {
+//   const cartProduct = { ...product, quantity: 1};
+//   return cartProduct
+// }
+// function checkCart(price) {
+//   const cartProduct = { ...price, quantity: 1};
+//   const found = filter.find((filterItem) => filterItem.title === cartProduct.price)
+//   if (found) {
+//     found.quantity += 1;
+//   } else {
+//     filter.push(price)
+//   }
+// }
+
+// addToCart();
