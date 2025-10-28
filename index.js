@@ -233,7 +233,7 @@ function filterByPrice(price) {
     if (price === Number(cardCategory)) {
       card.style.display = "";
     } else {
-      card.style.display = "none";
+      card.style.display = "none";  
     }
   });
 }
