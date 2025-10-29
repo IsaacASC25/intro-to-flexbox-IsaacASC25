@@ -230,22 +230,27 @@ function filterByPrice(price) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     const cardCategory = card.getAttribute("data-price");
-    if (price === Number(cardCategory)) {
+    if (price < Number(cardCategory) && cards.addEventListener("click", () => )) {
+      //Make sure the correct button is being used
       card.style.display = "";
-    } else {
-      card.style.display = "none";  
+    } 
+    if (price > Number(cardCategory)) {
+      //Make sure the correct button is being used
+      card.style.display = "";
+      if (price == Number(cardCategory)) {
+      ///Make sure the correct button is being used
+      card.style.display = "";
     }
-  });
+  };
+});
 }
 
 function filterButton() {
-  const btn = document.querySelectorAll(".filter-button")
-  btn.addEventListener("click", () => {
-  btn.forEach((card) => {
+  const cards = document.querySelectorAll("card")
+  cards.addEventListener("click", () => {
     const filter = card.dataset.category
     filterByPrice (filter)
   });
-})
 }
 
 
