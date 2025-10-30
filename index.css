@@ -193,3 +193,7 @@ p {
     background-position: 100%;
   }
 }
+
+.filter-button {
+  margin-left: 400;
+}

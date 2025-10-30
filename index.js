@@ -229,31 +229,30 @@ function addToCart() {
 function filterByPrice(price) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
-    const cardCategory = card.getAttribute("data-price");
-    if (price < Number(cardCategory) && cards.addEventListener("click", () => )) {
-      //Make sure the correct button is being used
+    const cardprice = Number(card.getAttribute("data-price"));
+    if (
+      (price === "under" && cardprice < 2000) ||
+      (price === "same" && cardprice >= 2000 && cardprice <= 3000) ||
+      (price === "over" && cardprice > 3000)
+    ) {
       card.style.display = "";
-    } 
-    if (price > Number(cardCategory)) {
-      //Make sure the correct button is being used
-      card.style.display = "";
-      if (price == Number(cardCategory)) {
-      ///Make sure the correct button is being used
-      card.style.display = "";
+    } else {
+      card.style.display = "none";
     }
-  };
-});
-}
-
-function filterButton() {
-  const cards = document.querySelectorAll("card")
-  cards.addEventListener("click", () => {
-    const filter = card.dataset.category
-    filterByPrice (filter)
   });
 }
 
+function filterButton() {
+  const btns = document.querySelectorAll(".filter-button");
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const price = btn.dataset.category;
+      filterByPrice(price);
+    });
+  });
+}
 
+filterButton();
 
 // const filter = [];
 // function createCartObject (card) {
