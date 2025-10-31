@@ -253,9 +253,8 @@ function addtoCart() {
           panda.name ===
           event.target.closest(".card").getAttribute("data-title")
         )
-          cart.push(panda);
+          card.style.display = "";
       });
-      card.style.display = "";
     })
   );
 }
