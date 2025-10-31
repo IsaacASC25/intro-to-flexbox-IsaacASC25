@@ -71,7 +71,7 @@ h1 {
   border: 6px outset black;
 }
 
-button {
+.buy-button {
   background-color: #985e33;
   padding: 10px 20px;
   color: white;
@@ -194,6 +194,18 @@ p {
   }
 }
 
-.filter-button {
-  margin-left: 400;
+.filter-button:hover {
+  border-radius: 4px;
+  transform: scale(0.95);
 }
+
+.filter-button {
+  background-color: #985e33;
+  padding: 20px 90px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 25px;
+  margin: 0px 183px;
+}
+

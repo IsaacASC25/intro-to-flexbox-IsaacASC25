@@ -202,7 +202,7 @@ function inject(panda) {
         <h3 class="sibling">${"Sibling: " + panda.sibling}</h3>
         <h3 class="age"> ${"Age: " + panda.age}</h3>
       <p class="price">${"Price: " + "$" + panda.price}</p>
-      <button> ${"Buy Me Please"}</button>
+      <button class ="buy-button"> ${"Buy Me Please"}</button>
       </div>`
   );
 }
