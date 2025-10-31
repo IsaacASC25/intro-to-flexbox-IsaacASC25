@@ -208,7 +208,7 @@ function inject(panda) {
 }
 panda.forEach((panda) => inject(panda));
 
-function addToCart() {
+function addToConsole() {
   const buttons = document.querySelectorAll("button");
   const btnarray = Array.from(buttons);
   const cart = [];
@@ -240,6 +240,24 @@ function filterByPrice(price) {
       card.style.display = "none";
     }
   });
+}
+
+function addtoCart() {
+  const buttons = document.querySelectorAll("button");
+  const btnarray = Array.from(buttons);
+  const cart = [];
+  btnarray.forEach((btn) =>
+    btn.addEventListener("click", function (event) {
+      panda.forEach((panda) => {
+        if (
+          panda.name ===
+          event.target.closest(".card").getAttribute("data-title")
+        )
+          cart.push(panda);
+      });
+      card.style.display = "";
+    })
+  );
 }
 
 function filterButton() {
