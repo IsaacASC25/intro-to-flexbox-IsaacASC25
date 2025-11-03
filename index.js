@@ -242,22 +242,6 @@ function filterByPrice(price) {
   });
 }
 
-function addtoCart() {
-  const buttons = document.querySelectorAll("button");
-  const btnarray = Array.from(buttons);
-  const cart = [];
-  btnarray.forEach((btn) =>
-    btn.addEventListener("click", function (event) {
-      panda.forEach((panda) => {
-        if (
-          panda.name ===
-          event.target.closest(".card").getAttribute("data-title")
-        )
-          card.style.display = "";
-      });
-    })
-  );
-}
 
 function filterButton() {
   const btns = document.querySelectorAll(".filter-button");
