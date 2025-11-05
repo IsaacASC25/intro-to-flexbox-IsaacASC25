@@ -218,6 +218,7 @@ function addToCart() {
     btn.addEventListener("click", (event) => {
       const card = event.target.closest(".card");
       const pandaName = card.getAttribute("data-title");
+      const deleteButton = document.querySelector("delete-button")
 
       const pandaItem = panda.find((p) => p.name === pandaName);
       if (pandaItem) {
