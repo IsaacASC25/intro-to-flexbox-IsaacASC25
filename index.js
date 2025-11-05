@@ -194,37 +194,47 @@ function inject(panda) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
     "afterbegin",
-    ` <div class = "card" data-title = "${panda.name}" data-price = ${
-      panda.price
-    }>
-    <img class="img" src = ${panda.img}" alt = ""</img>
-        <a class="name">${panda.name}</a>
-        <h3 class="sibling">${"Sibling: " + panda.sibling}</h3>
-        <h3 class="age"> ${"Age: " + panda.age}</h3>
-      <p class="price">${"Price: " + "$" + panda.price}</p>
-      <button class ="buy-button"> ${"Buy Me Please"}</button>
-      </div>`
+    `<div class="card" data-title="${panda.name}" data-price=${panda.price}>
+      <img class="img" src="${panda.img}" alt="" />
+      <a class="name">${panda.name}</a>
+      <h3 class="sibling">Sibling: ${panda.sibling}</h3>
+      <h3 class="age">Age: ${panda.age}</h3>
+      <p class="price">Price: $${panda.price}</p>
+      <button class="buy-button">Buy Me Please</button>
+    </div>`
   );
 }
+
 panda.forEach((panda) => inject(panda));
 
-function addToConsole() {
-  const buttons = document.querySelectorAll("button");
-  const btnarray = Array.from(buttons);
-  const cart = [];
-  btnarray.forEach((btn) =>
-    btn.addEventListener("click", function (event) {
-      panda.forEach((panda) => {
-        if (
-          panda.name ===
-          event.target.closest(".card").getAttribute("data-title")
-        )
-          cart.push(panda);
-      });
-      console.log(cart);
-    })
-  );
+const cart = [];
+
+function addToCart() {
+  const buttons = document.querySelectorAll(".buy-button");
+  const cartItemsContainer = document.querySelector(".cart-items");
+  const cartTotalDisplay = document.querySelector(".cart-total");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      const card = event.target.closest(".card");
+      const pandaName = card.getAttribute("data-title");
+
+      const pandaItem = panda.find((p) => p.name === pandaName);
+      if (pandaItem) {
+        cart.push(pandaItem);
+
+        const li = document.createElement("li");
+        li.textContent = `${pandaItem.name} - $${pandaItem.price}`;
+        cartItemsContainer.appendChild(li);
+
+        const total = cart.reduce((sum, item) => sum + item.price, 0);
+        cartTotalDisplay.textContent = `Total: $${total}`;
+      }
+    });
+  });
 }
+
+addToCart();
 
 function filterByPrice(price) {
   const cards = document.querySelectorAll(".card");
@@ -241,7 +251,6 @@ function filterByPrice(price) {
     }
   });
 }
-
 
 function filterButton() {
   const btns = document.querySelectorAll(".filter-button");
